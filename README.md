@@ -1,6 +1,9 @@
-# InstaClick X.1
-InstaClick X.1 is a automatic clicker where you can set the Keybind and the CPS (C.licks P.er S.econd) and automaticly clicks for you without anywork.
+# InstaClick X.2
+InstaClick X.2 is a automatic clicker where you can set the Keybind and the CPS (C.licks P.er S.econd) and automaticly clicks for you without anywork.
 If youre using this for malicous use that is on you.
+
+# InstaClick X.2 Update
+Now you can size down to show up our icon and can be moveable.
 
 # Downloading Steps
 If you want to install this automatic clicker then plase follow the steps below.
