@@ -7,110 +7,111 @@
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
-  
-  (function () {
+
+(function () {
     'use strict';
-     const blockedDomains = [
-    'doubleclick.net', // Google Ads
-    'googleadservices.com', // Google Ads
-    'googlesyndication.com', // Google Ads
-    'adservice.google.com', // Google Ads
-    'ads.google.com', // Google Ads
-    'ad.doubleclick.net', // Google Ads
-    'adclick.g.doubleclick.net', // Google Ads
-    'adform.net', // Adform
-    'adnxs.com', // AppNexus
-    'adsrvr.org', // The Trade Desk
-    'amazon-adsystem.com', // Amazon Ads
-    'rubiconproject.com', // Rubicon Project
-    'pubmatic.com', // PubMatic
-    'openx.net', // OpenX
-    'criteo.com', // Criteo
-    'taboola.com', // Taboola
-    'outbrain.com', // Outbrain
-    'revcontent.com', // RevContent
-    'zemanta.com', // Zemanta
-    'adroll.com', // AdRoll
-    'advertising.com', // AOL Advertising
-    'yieldmanager.com', // YieldManager
-    'adtechus.com', // AdTech
-    'advertising.yahoo.com', // Yahoo Ads
-    'ads.yahoo.com', // Yahoo Ads
-    'ads.facebook.com', // Facebook Ads
-    'ads.twitter.com', // Twitter Ads
-    'ads.linkedin.com', // LinkedIn Ads
-    'ads.pinterest.com', // Pinterest Ads
-    'ads.tiktok.com', // TikTok Ads
-    'ads.snapchat.com', // Snapchat Ads
-    'ads.reddit.com', // Reddit Ads
-    'ads.microsoft.com', // Microsoft Ads
-    'ads.bing.com', // Bing Ads
-    'adsrvr.org', // The Trade Desk
-    'advertising.amazon.com', // Amazon Ads
-    'advertising.apple.com', // Apple Ads
-    'advertising.twitch.tv', // Twitch Ads
-    'advertising.youtube.com', // YouTube Ads
-    'advertising.vrv.co', // VRV Ads
-    'advertising.hulu.com', // Hulu Ads
-    'advertising.disneyplus.com', // Disney+ Ads
-    'advertising.netflix.com', // Netflix Ads
-    'advertising.hbomax.com', // HBO Max Ads
-    'advertising.peacocktv.com', // Peacock TV Ads
-    'advertising.paramountplus.com', // Paramount+ Ads
-    'advertising.sling.com', // Sling TV Ads
-    'advertising.philo.com', // Philo Ads
-    'advertising.fubo.tv', // Fubo TV Ads
-    'advertising.pluto.tv', // Pluto TV Ads
-    'advertising.tubitv.com', // Tubi TV Ads
-    'advertising.crackle.com', // Crackle Ads
-    'advertising.vudu.com', // Vudu Ads
-    'advertising.imdb.com', // IMDb Ads
-    'advertising.rottentomatoes.com', // Rotten Tomatoes Ads
-    'advertising.metacritic.com', // Metacritic Ads
-    'advertising.ign.com', // IGN Ads
-    'advertising.gamespot.com', // GameSpot Ads
-    'advertising.polygon.com', // Polygon Ads
-    'advertising.kotaku.com', // Kotaku Ads
-    'advertising.theverge.com', // The Verge Ads
-    'advertising.techcrunch.com', // TechCrunch Ads
-    'advertising.engadget.com', // Engadget Ads
-    'advertising.gizmodo.com', // Gizmodo Ads
-    'advertising.lifehacker.com', // Lifehacker Ads
-    'advertising.jalopnik.com', // Jalopnik Ads
-    'advertising.deadspin.com', // Deadspin Ads
-    'advertising.kinja.com', // Kinja Ads
-    'advertising.gawker.com', // Gawker Ads
-    'advertising.buzzfeed.com', // BuzzFeed Ads
-    'advertising.vice.com', // Vice Ads
-    'advertising.vox.com', // Vox Ads
-    'advertising.theatlantic.com', // The Atlantic Ads
-    'advertising.newyorker.com', // The New Yorker Ads
-    'advertising.wired.com', // Wired Ads
-    'advertising.washingtonpost.com', // Washington Post Ads
-    'advertising.nytimes.com', // New York Times Ads
-    'advertising.wsj.com', // Wall Street Journal Ads
-    'advertising.forbes.com', // Forbes Ads
-    'advertising.businessinsider.com', // Business Insider Ads
-    'advertising.cnbc.com', // CNBC Ads
-    'advertising.bloomberg.com', // Bloomberg Ads
-    'advertising.reuters.com', // Reuters Ads
-    'advertising.apnews.com', // Associated Press Ads
-    'advertising.bbc.com', // BBC Ads
-    'advertising.cnn.com', // CNN Ads
-    'advertising.foxnews.com', // Fox News Ads
-    'advertising.msnbc.com', // MSNBC Ads
-    'advertising.nbcnews.com', // NBC News Ads
-    'advertising.cbsnews.com', // CBS News Ads
-    'advertising.abcnews.com', // ABC News Ads
-    'advertising.usatoday.com', // USA Today Ads
-    'advertising.latimes.com', // Los Angeles Times Ads
-    'advertising.chicagotribune.com', // Chicago Tribune Ads
-    'advertising.bostonglobe.com', // Boston Globe Ads
-    'advertising.sfchronicle.com', // San Francisco Chronicle Ads
-    'advertising.houstonchronicle.com', // Houston Chronicle Ads
-    'advertising.dallasnews.com', // Dallas Morning News Ads
-    'advertising.denverpost.com', // Denver Post Ads
-    'advertising.thestbernard.news.com'];
+    const blockedDomains = [
+        'doubleclick.net', // Google Ads
+        'googleadservices.com', // Google Ads
+        'googlesyndication.com', // Google Ads
+        'adservice.google.com', // Google Ads
+        'ads.google.com', // Google Ads
+        'ad.doubleclick.net', // Google Ads
+        'adclick.g.doubleclick.net', // Google Ads
+        'adform.net', // Adform
+        'adnxs.com', // AppNexus
+        'adsrvr.org', // The Trade Desk
+        'amazon-adsystem.com', // Amazon Ads
+        'rubiconproject.com', // Rubicon Project
+        'pubmatic.com', // PubMatic
+        'openx.net', // OpenX
+        'criteo.com', // Criteo
+        'taboola.com', // Taboola
+        'outbrain.com', // Outbrain
+        'revcontent.com', // RevContent
+        'zemanta.com', // Zemanta
+        'adroll.com', // AdRoll
+        'advertising.com', // AOL Advertising
+        'yieldmanager.com', // YieldManager
+        'adtechus.com', // AdTech
+        'advertising.yahoo.com', // Yahoo Ads
+        'ads.yahoo.com', // Yahoo Ads
+        'ads.facebook.com', // Facebook Ads
+        'ads.twitter.com', // Twitter Ads
+        'ads.linkedin.com', // LinkedIn Ads
+        'ads.pinterest.com', // Pinterest Ads
+        'ads.tiktok.com', // TikTok Ads
+        'ads.snapchat.com', // Snapchat Ads
+        'ads.reddit.com', // Reddit Ads
+        'ads.microsoft.com', // Microsoft Ads
+        'ads.bing.com', // Bing Ads
+        'adsrvr.org', // The Trade Desk
+        'advertising.amazon.com', // Amazon Ads
+        'advertising.apple.com', // Apple Ads
+        'advertising.twitch.tv', // Twitch Ads
+        'advertising.youtube.com', // YouTube Ads
+        'advertising.vrv.co', // VRV Ads
+        'advertising.hulu.com', // Hulu Ads
+        'advertising.disneyplus.com', // Disney+ Ads
+        'advertising.netflix.com', // Netflix Ads
+        'advertising.hbomax.com', // HBO Max Ads
+        'advertising.peacocktv.com', // Peacock TV Ads
+        'advertising.paramountplus.com', // Paramount+ Ads
+        'advertising.sling.com', // Sling TV Ads
+        'advertising.philo.com', // Philo Ads
+        'advertising.fubo.tv', // Fubo TV Ads
+        'advertising.pluto.tv', // Pluto TV Ads
+        'advertising.tubitv.com', // Tubi TV Ads
+        'advertising.crackle.com', // Crackle Ads
+        'advertising.vudu.com', // Vudu Ads
+        'advertising.imdb.com', // IMDb Ads
+        'advertising.rottentomatoes.com', // Rotten Tomatoes Ads
+        'advertising.metacritic.com', // Metacritic Ads
+        'advertising.ign.com', // IGN Ads
+        'advertising.gamespot.com', // GameSpot Ads
+        'advertising.polygon.com', // Polygon Ads
+        'advertising.kotaku.com', // Kotaku Ads
+        'advertising.theverge.com', // The Verge Ads
+        'advertising.techcrunch.com', // TechCrunch Ads
+        'advertising.engadget.com', // Engadget Ads
+        'advertising.gizmodo.com', // Gizmodo Ads
+        'advertising.lifehacker.com', // Lifehacker Ads
+        'advertising.jalopnik.com', // Jalopnik Ads
+        'advertising.deadspin.com', // Deadspin Ads
+        'advertising.kinja.com', // Kinja Ads
+        'advertising.gawker.com', // Gawker Ads
+        'advertising.buzzfeed.com', // BuzzFeed Ads
+        'advertising.vice.com', // Vice Ads
+        'advertising.vox.com', // Vox Ads
+        'advertising.theatlantic.com', // The Atlantic Ads
+        'advertising.newyorker.com', // The New Yorker Ads
+        'advertising.wired.com', // Wired Ads
+        'advertising.washingtonpost.com', // Washington Post Ads
+        'advertising.nytimes.com', // New York Times Ads
+        'advertising.wsj.com', // Wall Street Journal Ads
+        'advertising.forbes.com', // Forbes Ads
+        'advertising.businessinsider.com', // Business Insider Ads
+        'advertising.cnbc.com', // CNBC Ads
+        'advertising.bloomberg.com', // Bloomberg Ads
+        'advertising.reuters.com', // Reuters Ads
+        'advertising.apnews.com', // Associated Press Ads
+        'advertising.bbc.com', // BBC Ads
+        'advertising.cnn.com', // CNN Ads
+        'advertising.foxnews.com', // Fox News Ads
+        'advertising.msnbc.com', // MSNBC Ads
+        'advertising.nbcnews.com', // NBC News Ads
+        'advertising.cbsnews.com', // CBS News Ads
+        'advertising.abcnews.com', // ABC News Ads
+        'advertising.usatoday.com', // USA Today Ads
+        'advertising.latimes.com', // Los Angeles Times Ads
+        'advertising.chicagotribune.com', // Chicago Tribune Ads
+        'advertising.bostonglobe.com', // Boston Globe Ads
+        'advertising.sfchronicle.com', // San Francisco Chronicle Ads
+        'advertising.houstonchronicle.com', // Houston Chronicle Ads
+        'advertising.dallasnews.com', // Dallas Morning News Ads
+        'advertising.denverpost.com', // Denver Post Ads
+        'advertising.thestbernard.news.com'
+    ];
     const currentDomain = window.location.hostname;
     if (blockedDomains.includes(currentDomain)) {
         return; // Stop execution on blocked domains
@@ -349,89 +350,6 @@
         isClicking = !isClicking;
     }
 
-    // Function to check for updates
-    // Function to check for updates
-function checkForUpdates() {
-    // Check if the user previously declined the update
-    const updateDeclined = localStorage.getItem('updateDeclined');
-    if (updateDeclined) {
-        console.log('Update was previously declined.');
-        return; // Don't show the prompt if the user already declined
-    }
-
-    fetch('https://raw.githubusercontent.com/mrdavidss-vgg/instaclick-x/refs/heads/main/client/version')
-        .then(response => response.text())
-        .then(version => {
-            const fetchedVersion = version.trim();
-            if (fetchedVersion !== versionInfo.Version) {
-                showUpdatePrompt(fetchedVersion);
-            } else {
-                console.log('You are on the latest version.');
-            }
-        })
-        .catch(error => console.error('Failed to fetch version:', error));
-}
-
-// Function to show update prompt
-function showUpdatePrompt(newVersion) {
-    const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-    overlay.style.zIndex = '100000';
-    overlay.style.display = 'flex';
-    overlay.style.justifyContent = 'center';
-    overlay.style.alignItems = 'center';
-
-    const prompt = document.createElement('div');
-    prompt.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-    prompt.style.padding = '20px';
-    prompt.style.borderRadius = '10px';
-    prompt.style.textAlign = 'center';
-    prompt.style.color = 'white';
-
-    const message = document.createElement('p');
-    message.textContent = `Do you want to update to version ${newVersion}?`;
-    message.style.marginBottom = '20px';
-
-    const yesButton = document.createElement('button');
-    yesButton.textContent = 'Yes';
-    yesButton.style.padding = '10px 20px';
-    yesButton.style.marginRight = '10px';
-    yesButton.style.cursor = 'pointer';
-    yesButton.style.backgroundColor = '#2196F3'; // Blue button
-    yesButton.style.color = 'white';
-    yesButton.style.border = 'none';
-    yesButton.style.borderRadius = '5px';
-
-    const noButton = document.createElement('button');
-    noButton.textContent = 'No';
-    noButton.style.padding = '10px 20px';
-    noButton.style.cursor = 'pointer';
-    noButton.style.backgroundColor = '#2196F3'; // Blue button
-    noButton.style.color = 'white';
-    noButton.style.border = 'none';
-    noButton.style.borderRadius = '5px';
-
-    prompt.appendChild(message);
-    prompt.appendChild(yesButton);
-    prompt.appendChild(noButton);
-    overlay.appendChild(prompt);
-    document.body.appendChild(overlay);
-
-    yesButton.addEventListener('click', () => {
-        window.location.href = 'https://raw.githubusercontent.com/mrdavidss-vgg/instaclick-x/refs/heads/main/clicker.js';
-    });
-
-    noButton.addEventListener('click', () => {
-        document.body.removeChild(overlay);
-        localStorage.setItem('updateDeclined', true); // Save the user's choice
-    });
-}
-
     // Initialize
     const { ui, cpsInput, keybindInput, button, modsButton } = createUI();
     const { modsUI, breakCpsCapButton, exitButton } = createModsUI();
@@ -497,7 +415,4 @@ function showUpdatePrompt(newVersion) {
         }
         saveData(); // Save CPS value
     });
-
-    // Check for updates on script load
-    checkForUpdates();
 })();
