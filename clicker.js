@@ -252,7 +252,7 @@
 
         // Add a title for the mods UI
         const modsTitle = document.createElement('span');
-        modsTitle.textContent = 'Mods';
+        modsTitle.textContent = 'InstaMod Menu X';
         modsTitle.style.fontWeight = 'bold';
 
         // Add a "Break CPS Cap" button
